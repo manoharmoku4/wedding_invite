@@ -38,8 +38,8 @@ async function downloadImage(url, dest) {
 async function main() {
   const key = process.env.FAL_KEY
   if (!key) {
-    console.error('❌  FAL_KEY not set. Get a free key at https://fal.ai')
-    process.exit(1)
+    console.warn('⚠️   FAL_KEY not set — skipping image generation. Add FAL_KEY to generate images.')
+    return
   }
 
   fal.config({ credentials: key })
